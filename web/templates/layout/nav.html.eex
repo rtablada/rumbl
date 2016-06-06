@@ -16,9 +16,26 @@
         <li>
           <%= link fa_with_text("home", "Home"), to: page_path(@conn, :index) %>
         </li>
-        <li>
-          <%= link fa_with_text("user", "Users"), to: user_path(@conn, :index) %>
-        </li>
+        <%= if @current_user do %>
+          <li>
+            <p>
+              Welcome <%= @current_user.name %>
+            </p>
+          </li>
+          <li>
+            <%= link fa_with_text("user", "Users"), to: user_path(@conn, :index) %>
+          </li>
+          <li>
+            <%= link fa_with_text("sign-out", "Logout"), to: session_path(@conn, :delete, @current_user), method: "delete" %>
+          </li>
+        <% else %>
+          <li>
+            <%= link fa_with_text("sign-in", "Login"), to: session_path(@conn, :new) %>
+          </li>
+          <li>
+            <%= link fa_with_text("user-plus", "Register"), to: user_path(@conn, :new) %>
+          </li>
+        <% end %>
       </ul>
     </div>
     <!-- /.sidebar-collapse -->

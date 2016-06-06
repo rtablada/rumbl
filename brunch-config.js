@@ -77,9 +77,10 @@ exports.config = {
         'dist/css/sb-admin-2.css',
 
         'bower_components/morrisjs/morris.css',
-
-        'bower_components/font-awesome/css/font-awesome.min.css',
       ],
+      "font-awesome": [
+        "css/font-awesome.min.css"
+      ]
     }
   }
 };
