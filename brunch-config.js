@@ -65,6 +65,21 @@ exports.config = {
     enabled: true,
     // Whitelist the npm deps to be pulled in as front-end assets.
     // All other deps in package.json will be excluded from the bundle.
-    whitelist: ["phoenix", "phoenix_html"]
+    whitelist: ["phoenix", "phoenix_html", "startbootstrap-sb-admin-2"],
+    styles: {
+      "startbootstrap-sb-admin-2": [
+        'bower_components/bootstrap/dist/css/bootstrap.min.css',
+
+        'bower_components/metisMenu/dist/metisMenu.min.css',
+
+        'dist/css/timeline.css',
+
+        'dist/css/sb-admin-2.css',
+
+        'bower_components/morrisjs/morris.css',
+
+        'bower_components/font-awesome/css/font-awesome.min.css',
+      ],
+    }
   }
 };
