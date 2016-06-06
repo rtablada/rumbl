@@ -1,10 +1,24 @@
-<h1>Listing Users</h1>
+<div class="row">
+  <div class="col-sm-12">
+    <h1>Listing Users</h1>
+  </div>
+</div>
 
-<table class="table">
-  <%= for user <- @users do %>
-    <tr>
-      <td><%= render "user.html", user: user %></td>
-      <td><%= link "View", to: user_path(@conn, :show, user) %></td>
-    </tr>
-  <% end %>
-</table>
+<div class="row">
+  <div class="col-sm-12">
+    <%= link "New User", to: user_path(@conn, :new) %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12">
+    <table class="table">
+      <%= for user <- @users do %>
+        <tr>
+          <td><%= render "user.html", user: user %></td>
+          <td><%= link "View", to: user_path(@conn, :show, user) %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

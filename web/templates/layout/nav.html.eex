@@ -16,6 +16,9 @@
         <li>
           <%= link fa_with_text("home", "Home"), to: page_path(@conn, :index) %>
         </li>
+        <li>
+          <%= link fa_with_text("user", "Users"), to: user_path(@conn, :index) %>
+        </li>
       </ul>
     </div>
     <!-- /.sidebar-collapse -->

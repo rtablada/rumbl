@@ -17,8 +17,12 @@
       <%= render "nav.html", assigns %>
 
       <main id="page-wrapper">
-        <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-        <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+        <div class="row">
+          <div class="col-sm-12">
+            <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+            <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+          </div>
+        </div>
 
         <%= render @view_module, @view_template, assigns %>
       </main>

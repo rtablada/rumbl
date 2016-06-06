@@ -1,5 +1,7 @@
-<div class="jumbotron">
-  <h2>Welcome to Rubl.io</h2>
+<div class="row">
+  <div class="col-sm-12">
+    <h2>Welcome to Rubl.io</h2>
 
-  <p class="lead">Rumble out loud.</p>
+    <p class="lead">Rumble out loud.</p>
+  </div>
 </div>

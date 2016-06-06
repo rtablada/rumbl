@@ -1,5 +1,9 @@
-<h1>Showing User</h1>
+<div class="row">
+  <div class="col-sm-12">
+    <h1>Showing User</h1>
 
-<p>
-  <%= render "user.html", user: @user %>
-</p>
+    <p>
+      <%= render "user.html", user: @user %>
+    </p>
+  </div>
+</div>
