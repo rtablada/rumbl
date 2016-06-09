@@ -12,9 +12,18 @@ defmodule Rumbl.Auth do
 
   def call(conn, repo) do
     user_id = get_session(conn, :user_id)
-    user    = user_id && repo.get(User, user_id)
 
-    assign(conn, :current_user, user)
+    cond do
+      # If user is already set, do nothing
+      user = conn.assigns[:current_user] ->
+        conn
+      # If user is found assign current user
+      user = user_id && repo.get(Rumbl.User, user_id) ->
+        assign(conn, :current_user, user)
+      # If user id is not set or not found, there's no current user
+      true ->
+        assign(conn, :current_user, nil)
+    end
   end
 
   def authenticate_user(conn, _opts) do
